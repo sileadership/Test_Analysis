@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Questionnaire</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #222;
+      color: #eee;
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .panel {
+      width: 80%;
+      max-width: 800px;
+      height: 80%;
+      max-height: 600px;
+      background-color: #333;
+      border-radius: 20px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .header {
+      background-color: #555;
+      padding: 20px;
+      text-align: center;
+      border-bottom-left-radius: 20px;
+      border-bottom-right-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      position: relative;
+    }
+
+    .header img {
+      height: 100px;
+      margin-right: 10px;
+    }
+
+    .footer {
+      background-color: #444;
+      padding: 20px;
+      text-align: center;
+      border-top: 1px solid #666;
+      border-bottom-left-radius: 20px;
+      border-bottom-right-radius: 20px;
+    }
+
+    .slider {
+      flex: 1;
+      overflow: hidden;
+      border-radius: 20px;
+      margin: 20px;
+    }
+
+    .slides {
+      display: flex;
+      width: 5400%;
+      transition: transform 0.5s ease;
+    }
+
+    .slide {
+      width: 50%;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    h1 {
+      font-size: 24px;
+      margin: 0;
+    }
+
+    h2 {
+      font-size: 18px;
+      margin-top: 0;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 16px;
+      margin-bottom: 15px;
+    }
+
+    .options {
+      display: flex;
+      flex-direction: row;
+    }
+
+    .option {
+      margin-right: 10px;
+    }
+
+    .button-container {
+      display: flex;
+      justify-content: space-between;
+      padding: 0 20px;
+      margin-top: 10px;
+    }
+
+    .button {
+      padding: 12px 24px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      cursor: pointer;
+      outline: none;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+
+    .button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+<header class="header">
+  <h1>Quantitative Analysis</h1>
+</header>
+<div class="container">
+  <div class="panel">
+    <div class="header">
+      <img src="https://d15mz6hmryxmzd.cloudfront.net/images/sil-newblack-logo.webp" alt="Company Logo">
+    </div>
+    <div class="slider">
+      <div class="slides">
+        <div class="slide">
+          <h2>Question 1</h2>
+          <p>This is the first question.</p>
+          <div class="options">
+            <label class="option"><input type="radio" name="q1" value="Always"> Always</label>
+            <label class="option"><input type="radio" name="q1" value="Often"> Often</label>
+            <label class="option"><input type="radio" name="q1" value="Sometimes"> Sometimes</label>
+            <label class="option"><input type="radio" name="q1" value="Rarely"> Rarely</label>
+            <label class="option"><input type="radio" name="q1" value="Never"> Never</label>
+  
+          </div>
+          <br> </br>
+          <br> </br>
+          <h2>Question 2</h2>
+          <p>This is the second question.</p>
+          <div class="options">
+            <label class="option"><input type="radio" name="q2" value="Always"> Always</label>
+            <label class="option"><input type="radio" name="q2" value="Often"> Often</label>
+            <label class="option"><input type="radio" name="q2" value="Sometimes"> Sometimes</label>
+            <label class="option"><input type="radio" name="q2" value="Rarely"> Rarely</label>
+            <label class="option"><input type="radio" name="q2" value="Never"> Never</label>
+          </div>
+        </div>
+        <div class="slide">
+          <h2>Question 3</h2>
+          <p>This is the third question.</p>
+          <div class="options">
+            <label class="option"><input type="radio" name="q3" value="Always"> Always</label>
+            <label class="option"><input type="radio" name="q3" value="Often"> Often</label>
+            <label class="option"><input type="radio" name="q3" value="Sometimes"> Sometimes</label>
+            <label class="option"><input type="radio" name="q3" value="Rarely"> Rarely</label>
+            <label class="option"><input type="radio" name="q3" value="Never"> Never</label>
+          </div>
+          <br> </br>
+          <br> </br>
+          <h2>Question 4</h2>
+          <p>This is the fourth question.</p>
+          <div class="options">
+            <label class="option"><input type="radio" name="q4" value="Always"> Always</label>
+            <label class="option"><input type="radio" name="q4" value="Often"> Often</label>
+            <label class="option"><input type="radio" name="q4" value="Sometimes"> Sometimes</label>
+            <label class="option"><input type="radio" name="q4" value="Rarely"> Rarely</label>
+            <label class="option"><input type="radio" name="q4" value="Never"> Never</label>
+          </div>
+        </div>
+        <div class="slide">
+          <h2>Question 5</h2>
+          <p>This is the third question.</p>
+          <div class="options">
+            <label class="option"><input type="radio" name="q5" value="Always"> Always</label>
+            <label class="option"><input type="radio" name="q5" value="Often"> Often</label>
+            <label class="option"><input type="radio" name="q5" value="Sometimes"> Sometimes</label>
+            <label class="option"><input type="radio" name="q5" value="Rarely"> Rarely</label>
+            <label class="option"><input type="radio" name="q5" value="Never"> Never</label>
+          </div>
+          <br> </br>
+          <br> </br>
+          <h2>Question 6</h2>
+          <p>This is the fourth question.</p>
+          <div class="options">
+            <label class="option"><input type="radio" name="q6" value="Always"> Always</label>
+            <label class="option"><input type="radio" name="q6" value="Often"> Often</label>
+            <label class="option"><input type="radio" name="q6" value="Sometimes"> Sometimes</label>
+            <label class="option"><input type="radio" name="q6" value="Rarely"> Rarely</label>
+            <label class="option"><input type="radio" name="q6" value="Never"> Never</label>
+          </div>
+        </div>
+        <div class="slide">
+          <h2>Question 7</h2>
+          <p>This is the third question.</p>
+          <div class="options">
+            <label class="option"><input type="radio" name="q7" value="Always"> Always</label>
+            <label class="option"><input type="radio" name="q7" value="Often"> Often</label>
+            <label class="option"><input type="radio" name="q7" value="Sometimes"> Sometimes</label>
+            <label class="option"><input type="radio" name="q7" value="Rarely"> Rarely</label>
+            <label class="option"><input type="radio" name="q7" value="Never"> Never</label>
+            
+          </div>
+          <br> </br>
+          <br> </br>
+          <h2>Question 8</h2>
+          <p>This is the fourth question.</p>
+          <div class="options">
+            <label class="option"><input type="radio" name="q8" value="Always"> Always</label>
+            <label class="option"><input type="radio" name="q8" value="Often"> Often</label>
+            <label class="option"><input type="radio" name="q8" value="Sometimes"> Sometimes</label>
+            <label class="option"><input type="radio" name="q8" value="Rarely"> Rarely</label>
+            <label class="option"><input type="radio" name="q8" value="Never"> Never</label>
+          </div>
+        </div>
+        <div class="slide">
+          <h2>Question 9</h2>
+          <p>This is the third question.</p>
+          <div class="options">
+            <label class="option"><input type="radio" name="q9" value="Always"> Always</label>
+            <label class="option"><input type="radio" name="q9" value="Often"> Often</label>
+            <label class="option"><input type="radio" name="q9" value="Sometimes"> Sometimes</label>
+            <label class="option"><input type="radio" name="q9" value="Rarely"> Rarely</label>
+            <label class="option"><input type="radio" name="q9" value="Never"> Never</label>
+          </div>
+          <br> </br>
+          <br> </br>
+          <h2>Question 10</h2>
+          <p>This is the fourth question.</p>
+          <div class="options">
+            <label class="option"><input type="radio" name="q10" value="Always"> Always</label>
+            <label class="option"><input type="radio" name="q10" value="Often"> Often</label>
+            <label class="option"><input type="radio" name="q10" value="Sometimes"> Sometimes</label>
+            <label class="option"><input type="radio" name="q10" value="Rarely"> Rarely</label>
+            <label class="option"><input type="radio" name="q10" value="Never"> Never</label>
+          </div>
+        </div>
+        <div class="slide">
+          <h2>Question 11</h2>
+          <p>This is the third question.</p>
+          <div class="options">
+            <label class="option"><input type="radio" name="q11" value="Always"> Always</label>
+            <label class="option"><input type="radio" name="q11" value="Often"> Often</label>
+            <label class="option"><input type="radio" name="q11" value="Sometimes"> Sometimes</label>
+            <label class="option"><input type="radio" name="q11" value="Rarely"> Rarely</label>
+            <label class="option"><input type="radio" name="q11" value="Never"> Never</label>
+          </div>
+          <br> </br>
+          <br> </br>
+          <h2>Question 12</h2>
+          <p>This is the fourth question.</p>
+          <div class="options">
+            <label class="option"><input type="radio" name="q12" value="Always"> Always</label>
+            <label class="option"><input type="radio" name="q12" value="Often"> Often</label>
+            <label class="option"><input type="radio" name="q12" value="Sometimes"> Sometimes</label>
+            <label class="option"><input type="radio" name="q12" value="Rarely"> Rarely</label>
+            <label class="option"><input type="radio" name="q12" value="Never"> Never</label>
+          </div>
+        </div>
+        <div class="slide">
+          <h2>Question 13</h2>
+          <p>This is the third question.</p>
+          <div class="options">
+            <label class="option"><input type="radio" name="q13" value="Always"> Always</label>
+            <label class="option"><input type="radio" name="q13" value="Often"> Often</label>
+            <label class="option"><input type="radio" name="q13" value="Sometimes"> Sometimes</label>
+            <label class="option"><input type="radio" name="q13" value="Rarely"> Rarely</label>
+            <label class="option"><input type="radio" name="q13" value="Never"> Never</label>
+          </div>
+          <br> </br>
+          <br> </br>
+          <h2>Question 14</h2>
+          <p>This is the fourth question.</p>
+          <div class="options">
+            <label class="option"><input type="radio" name="q14" value="Always"> Always</label>
+            <label class="option"><input type="radio" name="q14" value="Often"> Often</label>
+            <label class="option"><input type="radio" name="q14" value="Sometimes"> Sometimes</label>
+            <label class="option"><input type="radio" name="q14" value="Rarely"> Rarely</label>
+            <label class="option"><input type="radio" name="q14" value="Never"> Never</label>
+          </div>
+        </div>
+        <div class="slide">
+          <h2>Question 15</h2>
+          <p>This is the third question.</p>
+          <div class="options">
+            <label class="option"><input type="radio" name="q15" value="Always"> Always</label>
+            <label class="option"><input type="radio" name="q15" value="Often"> Often</label>
+            <label class="option"><input type="radio" name="q15" value="Sometimes"> Sometimes</label>
+            <label class="option"><input type="radio" name="q15" value="Rarely"> Rarely</label>
+            <label class="option"><input type="radio" name="q15" value="Never"> Never</label>
+          </div>
+          <br> </br>
+          <br> </br>
+          <h2>Question 16</h2>
+          <p>This is the fourth question.</p>
+          <div class="options">
+            <label class="option"><input type="radio" name="q16" value="Always"> Always</label>
+            <label class="option"><input type="radio" name="q16" value="Often"> Often</label>
+            <label class="option"><input type="radio" name="q16" value="Sometimes"> Sometimes</label>
+            <label class="option"><input type="radio" name="q16" value="Rarely"> Rarely</label>
+            <label class="option"><input type="radio" name="q16" value="Never"> Never</label>
+          </div>
+        </div>
+        <div class="slide">
+          <h2>Question 17</h2>
+          <p>This is the third question.</p>
+          <div class="options">
+            <label class="option"><input type="radio" name="q17" value="Always"> Always</label>
+            <label class="option"><input type="radio" name="q17" value="Often"> Often</label>
+            <label class="option"><input type="radio" name="q17" value="Sometimes"> Sometimes</label>
+            <label class="option"><input type="radio" name="q17" value="Rarely"> Rarely</label>
+            <label class="option"><input type="radio" name="q17" value="Never"> Never</label>
+          </div>
+          <br> </br>
+          <br> </br>
+          <h2>Question 18</h2>
+          <p>This is the fourth question.</p>
+          <div class="options">
+            <label class="option"><input type="radio" name="q18" value="Always"> Always</label>
+            <label class="option"><input type="radio" name="q18" value="Often"> Often</label>
+            <label class="option"><input type="radio" name="q18" value="Sometimes"> Sometimes</label>
+            <label class="option"><input type="radio" name="q18" value="Rarely"> Rarely</label>
+            <label class="option"><input type="radio" name="q18" value="Never"> Never</label>
+          </div>
+        </div>
+        <div class="slide">
+          <h2>Question 19</h2>
+          <p>This is the third question.</p>
+          <div class="options">
+            <label class="option"><input type="radio" name="q19" value="Always"> Always</label>
+            <label class="option"><input type="radio" name="q19" value="Often"> Often</label>
+            <label class="option"><input type="radio" name="q19" value="Sometimes"> Sometimes</label>
+            <label class="option"><input type="radio" name="q19" value="Rarely"> Rarely</label>
+            <label class="option"><input type="radio" name="q19" value="Never"> Never</label>
+          </div>
+          <br> </br>
+          <br> </br>
+          <h2>Question 20</h2>
+          <p>This is the fourth question.</p>
+          <div class="options">
+            <label class="option"><input type="radio" name="q20" value="Always"> Always</label>
+            <label class="option"><input type="radio" name="q20" value="Often"> Often</label>
+            <label class="option"><input type="radio" name="q20" value="Sometimes"> Sometimes</label>
+            <label class="option"><input type="radio" name="q20" value="Rarely"> Rarely</label>
+            <label class="option"><input type="radio" name="q20" value="Never"> Never</label>
+          </div>
+        </div>
+        <div class="slide">
+          <h2>Question 21</h2>
+          <p>This is the third question.</p>
+          <div class="options">
+            <label class="option"><input type="radio" name="q21" value="Always"> Always</label>
+            <label class="option"><input type="radio" name="q21" value="Often"> Often</label>
+            <label class="option"><input type="radio" name="q21" value="Sometimes"> Sometimes</label>
+            <label class="option"><input type="radio" name="q21" value="Rarely"> Rarely</label>
+            <label class="option"><input type="radio" name="q21" value="Never"> Never</label>
+          </div>
+          <br> </br>
+          <br> </br>
+          <h2>Question 22</h2>
+          <p>This is the fourth question.</p>
+          <div class="options">
+            <label class="option"><input type="radio" name="q22" value="Always"> Always</label>
+            <label class="option"><input type="radio" name="q22" value="Often"> Often</label>
+            <label class="option"><input type="radio" name="q22" value="Sometimes"> Sometimes</label>
+            <label class="option"><input type="radio" name="q22" value="Rarely"> Rarely</label>
+            <label class="option"><input type="radio" name="q22" value="Never"> Never</label>
+          </div>
+        </div>
+        <div class="slide">
+          <h2>Question 23</h2>
+          <p>This is the third question.</p>
+          <div class="options">
+            <label class="option"><input type="radio" name="q23" value="Always"> Always</label>
+            <label class="option"><input type="radio" name="q23" value="Often"> Often</label>
+            <label class="option"><input type="radio" name="q23" value="Sometimes"> Sometimes</label>
+            <label class="option"><input type="radio" name="q23" value="Rarely"> Rarely</label>
+            <label class="option"><input type="radio" name="q23" value="Never"> Never</label>
+          </div>
+          <br> </br>
+          <br> </br>
+          <h2>Question 24</h2>
+          <p>This is the fourth question.</p>
+          <div class="options">
+            <label class="option"><input type="radio" name="q24" value="Always"> Always</label>
+            <label class="option"><input type="radio" name="q24" value="Often"> Often</label>
+            <label class="option"><input type="radio" name="q24" value="Sometimes"> Sometimes</label>
+            <label class="option"><input type="radio" name="q24" value="Rarely"> Rarely</label>
+            <label class="option"><input type="radio" name="q24" value="Never"> Never</label>
+          </div>
+        </div>
+        <div class="slide">
+          <h2>Question 25</h2>
+          <p>This is the third question.</p>
+          <div class="options">
+            <label class="option"><input type="radio" name="q25" value="Always"> Always</label>
+            <label class="option"><input type="radio" name="q25" value="Often"> Often</label>
+            <label class="option"><input type="radio" name="q25" value="Sometimes"> Sometimes</label>
+            <label class="option"><input type="radio" name="q25" value="Rarely"> Rarely</label>
+            <label class="option"><input type="radio" name="q25" value="Never"> Never</label>
+          </div>
+          <br> </br>
+          <br> </br>
+          <h2>Question 26</h2>
+          <p>This is the fourth question.</p>
+          <div class="options">
+            <label class="option"><input type="radio" name="q26" value="Always"> Always</label>
+            <label class="option"><input type="radio" name="q26" value="Often"> Often</label>
+            <label class="option"><input type="radio" name="q26" value="Sometimes"> Sometimes</label>
+            <label class="option"><input type="radio" name="q26" value="Rarely"> Rarely</label>
+            <label class="option"><input type="radio" name="q26" value="Never"> Never</label>
+          </div>
+        </div>
+        <div class="slide">
+          <h2>Question 27</h2>
+          <p>This is the third question.</p>
+          <div class="options">
+            <label class="option"><input type="radio" name="q27" value="Always"> Always</label>
+            <label class="option"><input type="radio" name="q27" value="Often"> Often</label>
+            <label class="option"><input type="radio" name="q27" value="Sometimes"> Sometimes</label>
+            <label class="option"><input type="radio" name="q27" value="Rarely"> Rarely</label>
+            <label class="option"><input type="radio" name="q27" value="Never"> Never</label>
+          </div>
+          <br> </br>
+          <br> </br>
+          <h2>Question 28</h2>
+          <p>This is the fourth question.</p>
+          <div class="options">
+            <label class="option"><input type="radio" name="q28" value="Always"> Always</label>
+            <label class="option"><input type="radio" name="q28" value="Often"> Often</label>
+            <label class="option"><input type="radio" name="q28" value="Sometimes"> Sometimes</label>
+            <label class="option"><input type="radio" name="q28" value="Rarely"> Rarely</label>
+            <label class="option"><input type="radio" name="q28" value="Never"> Never</label>
+          </div>
+        </div>
+        <div class="slide">
+          <h2>Question 29</h2>
+          <p>This is the third question.</p>
+          <div class="options">
+            <label class="option"><input type="radio" name="q29" value="Always"> Always</label>
+            <label class="option"><input type="radio" name="q29" value="Often"> Often</label>
+            <label class="option"><input type="radio" name="q29" value="Sometimes"> Sometimes</label>
+            <label class="option"><input type="radio" name="q29" value="Rarely"> Rarely</label>
+            <label class="option"><input type="radio" name="q29" value="Never"> Never</label>
+          </div>
+          <br> </br>
+          <br> </br>
+          <h2>Question 30</h2>
+          <p>This is the fourth question.</p>
+          <div class="options">
+            <label class="option"><input type="radio" name="q30" value="Always"> Always</label>
+            <label class="option"><input type="radio" name="q30" value="Often"> Often</label>
+            <label class="option"><input type="radio" name="q30" value="Sometimes"> Sometimes</label>
+            <label class="option"><input type="radio" name="q30" value="Rarely"> Rarely</label>
+            <label class="option"><input type="radio" name="q30" value="Never"> Never</label>
+          </div>
+        </div>
+        <div class="slide">
+          <h2>Question 31</h2>
+          <p>This is the third question.</p>
+          <div class="options">
+            <label class="option"><input type="radio" name="q31" value="Always"> Always</label>
+            <label class="option"><input type="radio" name="q31" value="Often"> Often</label>
+            <label class="option"><input type="radio" name="q31" value="Sometimes"> Sometimes</label>
+            <label class="option"><input type="radio" name="q31" value="Rarely"> Rarely</label>
+            <label class="option"><input type="radio" name="q31" value="Never"> Never</label>
+          </div>
+          <br> </br>
+          <br> </br>
+          <h2>Question 32</h2>
+          <p>This is the fourth question.</p>
+          <div class="options">
+            <label class="option"><input type="radio" name="q32" value="Always"> Always</label>
+            <label class="option"><input type="radio" name="q32" value="Often"> Often</label>
+            <label class="option"><input type="radio" name="q32" value="Sometimes"> Sometimes</label>
+            <label class="option"><input type="radio" name="q32" value="Rarely"> Rarely</label>
+            <label class="option"><input type="radio" name="q32" value="Never"> Never</label>
+          </div>
+        </div>
+        <div class="slide">
+          <h2>Question 33</h2>
+          <p>This is the third question.</p>
+          <div class="options">
+            <label class="option"><input type="radio" name="q33" value="Always"> Always</label>
+            <label class="option"><input type="radio" name="q33" value="Often"> Often</label>
+            <label class="option"><input type="radio" name="q33" value="Sometimes"> Sometimes</label>
+            <label class="option"><input type="radio" name="q33" value="Rarely"> Rarely</label>
+            <label class="option"><input type="radio" name="q33" value="Never"> Never</label>
+          </div>
+          <br> </br>
+          <br> </br>
+          <h2>Question 34</h2>
+          <p>This is the fourth question.</p>
+          <div class="options">
+            <label class="option"><input type="radio" name="q34" value="Always"> Always</label>
+            <label class="option"><input type="radio" name="q34" value="Often"> Often</label>
+            <label class="option"><input type="radio" name="q34" value="Sometimes"> Sometimes</label>
+            <label class="option"><input type="radio" name="q34" value="Rarely"> Rarely</label>
+            <label class="option"><input type="radio" name="q34" value="Never"> Never</label>
+          </div>
+        </div>
+        <div class="slide">
+          <h2>Question 35</h2>
+          <p>This is the third question.</p>
+          <div class="options">
+            <label class="option"><input type="radio" name="q35" value="Always"> Always</label>
+            <label class="option"><input type="radio" name="q35" value="Often"> Often</label>
+            <label class="option"><input type="radio" name="q35" value="Sometimes"> Sometimes</label>
+            <label class="option"><input type="radio" name="q35" value="Rarely"> Rarely</label>
+            <label class="option"><input type="radio" name="q35" value="Never"> Never</label>
+          </div>
+          <br> </br>
+          <br> </br>
+          <h2>Question 36</h2>
+          <p>This is the fourth question.</p>
+          <div class="options">
+            <label class="option"><input type="radio" name="q36" value="Always"> Always</label>
+            <label class="option"><input type="radio" name="q36" value="Often"> Often</label>
+            <label class="option"><input type="radio" name="q36" value="Sometimes"> Sometimes</label>
+            <label class="option"><input type="radio" name="q36" value="Rarely"> Rarely</label>
+            <label class="option"><input type="radio" name="q36" value="Never"> Never</label>
+          </div>
+        </div>
+        <div class="slide">
+          <h2>Question 37</h2>
+          <p>This is the third question.</p>
+          <div class="options">
+            <label class="option"><input type="radio" name="q37" value="Always"> Always</label>
+            <label class="option"><input type="radio" name="q37" value="Often"> Often</label>
+            <label class="option"><input type="radio" name="q37" value="Sometimes"> Sometimes</label>
+            <label class="option"><input type="radio" name="q37" value="Rarely"> Rarely</label>
+            <label class="option"><input type="radio" name="q37" value="Never"> Never</label>
+          </div>
+          <br> </br>
+          <br> </br>
+          <h2>Question 38</h2>
+          <p>This is the fourth question.</p>
+          <div class="options">
+            <label class="option"><input type="radio" name="q38" value="Always"> Always</label>
+            <label class="option"><input type="radio" name="q38" value="Often"> Often</label>
+            <label class="option"><input type="radio" name="q38" value="Sometimes"> Sometimes</label>
+            <label class="option"><input type="radio" name="q38" value="Rarely"> Rarely</label>
+            <label class="option"><input type="radio" name="q38" value="Never"> Never</label>
+          </div>
+        </div>
+        <div class="slide">
+          <h2>Question 39</h2>
+          <p>This is the third question.</p>
+          <div class="options">
+            <label class="option"><input type="radio" name="q39" value="Always"> Always</label>
+            <label class="option"><input type="radio" name="q39" value="Often"> Often</label>
+            <label class="option"><input type="radio" name="q39" value="Sometimes"> Sometimes</label>
+            <label class="option"><input type="radio" name="q39" value="Rarely"> Rarely</label>
+            <label class="option"><input type="radio" name="q39" value="Never"> Never</label>
+          </div>
+          <br> </br>
+          <br> </br>
+          <h2>Question 40</h2>
+          <p>This is the fourth question.</p>
+          <div class="options">
+            <label class="option"><input type="radio" name="q40" value="Always"> Always</label>
+            <label class="option"><input type="radio" name="q40" value="Often"> Often</label>
+            <label class="option"><input type="radio" name="q40" value="Sometimes"> Sometimes</label>
+            <label class="option"><input type="radio" name="q40" value="Rarely"> Rarely</label>
+            <label class="option"><input type="radio" name="q40" value="Never"> Never</label>
+          </div>
+        </div>
+        <div class="slide">
+          <h2>Question 41</h2>
+          <p>This is the third question.</p>
+          <div class="options">
+            <label class="option"><input type="radio" name="q41" value="Always"> Always</label>
+            <label class="option"><input type="radio" name="q41" value="Often"> Often</label>
+            <label class="option"><input type="radio" name="q41" value="Sometimes"> Sometimes</label>
+            <label class="option"><input type="radio" name="q41" value="Rarely"> Rarely</label>
+            <label class="option"><input type="radio" name="q41" value="Never"> Never</label>
+          </div>
+          <br> </br>
+          <br> </br>
+          <h2>Question 42</h2>
+          <p>This is the fourth question.</p>
+          <div class="options">
+            <label class="option"><input type="radio" name="q42" value="Always"> Always</label>
+            <label class="option"><input type="radio" name="q42" value="Often"> Often</label>
+            <label class="option"><input type="radio" name="q42" value="Sometimes"> Sometimes</label>
+            <label class="option"><input type="radio" name="q42" value="Rarely"> Rarely</label>
+            <label class="option"><input type="radio" name="q42" value="Never"> Never</label>
+          </div>
+        </div>
+        <div class="slide">
+          <h2>Question 43</h2>
+          <p>This is the third question.</p>
+          <div class="options">
+            <label class="option"><input type="radio" name="q43" value="Always"> Always</label>
+            <label class="option"><input type="radio" name="q43" value="Often"> Often</label>
+            <label class="option"><input type="radio" name="q43" value="Sometimes"> Sometimes</label>
+            <label class="option"><input type="radio" name="q43" value="Rarely"> Rarely</label>
+            <label class="option"><input type="radio" name="q43" value="Never"> Never</label>
+          </div>
+          <br> </br>
+          <br> </br>
+          <h2>Question 44</h2>
+          <p>This is the fourth question.</p>
+          <div class="options">
+            <label class="option"><input type="radio" name="q44" value="Always"> Always</label>
+            <label class="option"><input type="radio" name="q44" value="Often"> Often</label>
+            <label class="option"><input type="radio" name="q44" value="Sometimes"> Sometimes</label>
+            <label class="option"><input type="radio" name="q44" value="Rarely"> Rarely</label>
+            <label class="option"><input type="radio" name="q44" value="Never"> Never</label>
+          </div>
+        </div>
+        <div class="slide">
+          <h2>Question 45</h2>
+          <p>This is the third question.</p>
+          <div class="options">
+            <label class="option"><input type="radio" name="q45" value="Always"> Always</label>
+            <label class="option"><input type="radio" name="q45" value="Often"> Often</label>
+            <label class="option"><input type="radio" name="q45" value="Sometimes"> Sometimes</label>
+            <label class="option"><input type="radio" name="q45" value="Rarely"> Rarely</label>
+            <label class="option"><input type="radio" name="q45" value="Never"> Never</label>
+          </div>
+          <br> </br>
+          <br> </br>
+          <h2>Question 46</h2>
+          <p>This is the fourth question.</p>
+          <div class="options">
+            <label class="option"><input type="radio" name="q46" value="Always"> Always</label>
+            <label class="option"><input type="radio" name="q46" value="Often"> Often</label>
+            <label class="option"><input type="radio" name="q46" value="Sometimes"> Sometimes</label>
+            <label class="option"><input type="radio" name="q46" value="Rarely"> Rarely</label>
+            <label class="option"><input type="radio" name="q46" value="Never"> Never</label>
+          </div>
+        </div>
+        <div class="slide">
+          <h2>Question 47</h2>
+          <p>This is the third question.</p>
+          <div class="options">
+            <label class="option"><input type="radio" name="q47" value="Always"> Always</label>
+            <label class="option"><input type="radio" name="q47" value="Often"> Often</label>
+            <label class="option"><input type="radio" name="q47" value="Sometimes"> Sometimes</label>
+            <label class="option"><input type="radio" name="q47" value="Rarely"> Rarely</label>
+            <label class="option"><input type="radio" name="q47" value="Never"> Never</label>
+          </div>
+          <br> </br>
+          <br> </br>
+          <h2>Question 48</h2>
+          <p>This is the fourth question.</p>
+          <div class="options">
+            <label class="option"><input type="radio" name="q48" value="Always"> Always</label>
+            <label class="option"><input type="radio" name="q48" value="Often"> Often</label>
+            <label class="option"><input type="radio" name="q48" value="Sometimes"> Sometimes</label>
+            <label class="option"><input type="radio" name="q48" value="Rarely"> Rarely</label>
+            <label class="option"><input type="radio" name="q48" value="Never"> Never</label>
+          </div>
+        </div>
+        <div class="slide">
+          <h2>Question 49</h2>
+          <p>This is the third question.</p>
+          <div class="options">
+            <label class="option"><input type="radio" name="q49" value="Always"> Always</label>
+            <label class="option"><input type="radio" name="q49" value="Often"> Often</label>
+            <label class="option"><input type="radio" name="q49" value="Sometimes"> Sometimes</label>
+            <label class="option"><input type="radio" name="q49" value="Rarely"> Rarely</label>
+            <label class="option"><input type="radio" name="q49" value="Never"> Never</label>
+          </div>
+          <br> </br>
+          <br> </br>
+          <h2>Question 50</h2>
+          <p>This is the fourth question.</p>
+          <div class="options">
+            <label class="option"><input type="radio" name="q50" value="Always"> Always</label>
+            <label class="option"><input type="radio" name="q50" value="Often"> Often</label>
+            <label class="option"><input type="radio" name="q50" value="Sometimes"> Sometimes</label>
+            <label class="option"><input type="radio" name="q50" value="Rarely"> Rarely</label>
+            <label class="option"><input type="radio" name="q50" value="Never"> Never</label>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <div class="button-container">
+        <button class="button" onclick="prevSlide()">Previous</button>
+        <button class="button" onclick="nextSlide()">Next</button>
+        <button class="button" onclick="submitAnswers()">Submit</button>
+        
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+<script>
+
+  function toggleSubmitButtonVisibility() {
+    const submitButton = document.querySelector('.button-container .button:last-of-type');
+    const allQuestionsAnswered = Array.from(slides).every(slide => {
+      const radios = slide.querySelectorAll('input[type="radio"]');
+      return Array.from(radios).some(radio => radio.checked);
+    });
+    submitButton.style.display = allQuestionsAnswered ? 'block' : 'none';
+  }
+  
+  function showSlide(index) {
+    currentSlide = index;
+    const offset = index * -(100 / slides.length);
+    document.querySelector('.slides').style.transform = `translateX(${offset}%)`;
+    toggleSubmitButtonVisibility();
+  }
+  
+  function nextSlide() {
+    if (currentSlide < slides.length - 1) {
+      currentSlide++;
+      showSlide(currentSlide);
+    } else {
+      // If it's the last slide, submit button should be visible
+      toggleSubmitButtonVisibility();
+    }
+  }
+  
+  function prevSlide() {
+    if (currentSlide > 0) {
+      currentSlide--;
+      showSlide(currentSlide);
+    }
+  }
+  
+  // Initial setup
+  const slides = document.querySelectorAll('.slide');
+  let currentSlide = 0;
+  toggleSubmitButtonVisibility();
+  showSlide(currentSlide);
+
+  function submitAnswers() {
+  const answersData = {
+    q1: document.querySelector('input[name="q1"]:checked').value,
+    q2: document.querySelector('input[name="q2"]:checked').value,
+    q3: document.querySelector('input[name="q3"]:checked').value,
+    q4: document.querySelector('input[name="q4"]:checked').value,
+    q5: document.querySelector('input[name="q5"]:checked').value,
+    q6: document.querySelector('input[name="q6"]:checked').value,
+    q7: document.querySelector('input[name="q7"]:checked').value,
+    q8: document.querySelector('input[name="q8"]:checked').value,
+    q9: document.querySelector('input[name="q9"]:checked').value,
+    q10: document.querySelector('input[name="q10"]:checked').value,
+    q11: document.querySelector('input[name="q11"]:checked').value,
+    q12: document.querySelector('input[name="q12"]:checked').value,
+    q13: document.querySelector('input[name="q13"]:checked').value,
+    q14: document.querySelector('input[name="q14"]:checked').value,
+    q15: document.querySelector('input[name="q15"]:checked').value,
+    q16: document.querySelector('input[name="q16"]:checked').value,
+    q17: document.querySelector('input[name="q17"]:checked').value,
+    q18: document.querySelector('input[name="q18"]:checked').value,
+    q19: document.querySelector('input[name="q19"]:checked').value,
+    q20: document.querySelector('input[name="q20"]:checked').value,
+    q21: document.querySelector('input[name="q21"]:checked').value,
+    q22: document.querySelector('input[name="q22"]:checked').value,
+    q23: document.querySelector('input[name="q23"]:checked').value,
+    q24: document.querySelector('input[name="q24"]:checked').value,
+    q25: document.querySelector('input[name="q25"]:checked').value,
+    q26: document.querySelector('input[name="q26"]:checked').value,
+    q27: document.querySelector('input[name="q27"]:checked').value,
+    q28: document.querySelector('input[name="q28"]:checked').value,
+    q29: document.querySelector('input[name="q29"]:checked').value,
+    q30: document.querySelector('input[name="q30"]:checked').value,
+    q31: document.querySelector('input[name="q31"]:checked').value,
+    q32: document.querySelector('input[name="q32"]:checked').value,
+    q33: document.querySelector('input[name="q33"]:checked').value,
+    q34: document.querySelector('input[name="q34"]:checked').value,
+    q35: document.querySelector('input[name="q35"]:checked').value,
+    q36: document.querySelector('input[name="q36"]:checked').value,
+    q37: document.querySelector('input[name="q37"]:checked').value,
+    q38: document.querySelector('input[name="q38"]:checked').value,
+    q39: document.querySelector('input[name="q39"]:checked').value,
+    q40: document.querySelector('input[name="q40"]:checked').value,
+    q41: document.querySelector('input[name="q41"]:checked').value,
+    q42: document.querySelector('input[name="q42"]:checked').value,
+    q43: document.querySelector('input[name="q43"]:checked').value,
+    q44: document.querySelector('input[name="q44"]:checked').value,
+    q45: document.querySelector('input[name="q45"]:checked').value,
+    q46: document.querySelector('input[name="q46"]:checked').value,
+    q47: document.querySelector('input[name="q47"]:checked').value,
+    q48: document.querySelector('input[name="q48"]:checked').value,
+    q49: document.querySelector('input[name="q49"]:checked').value,
+    q50: document.querySelector('input[name="q50"]:checked').value
+  };
+
+    fetch('/submit', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(answersData)
+    })
+    .then(response => response.json())
+    .then(data => {
+      console.log(data);
+      alert(data.message);
+    })
+    .catch(error => {
+      console.error('Error:', error);
+      alert('An error occurred. Please try again.');
+    });
+  }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Report</title>
+    <!-- Chart.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <!-- pdf-lib and html2canvas libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/pdf-lib@1.16.0/dist/pdf-lib.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.3.2/html2canvas.min.js"></script>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            transition: background-color 0.3s, color 0.3s;
+        }
+        :root {
+            --bg-color: #202124;
+            --text-color: #e8eaed;
+            --container-bg: #2d2e30;
+            --item-bg: #35363a;
+            --header-color: #aad1f9;
+        }
+        .light-mode {
+            --bg-color: #f4f4f4;
+            --text-color: #333;
+            --container-bg: #fff;
+            --item-bg: #e4e4e4;
+            --header-color: #0366d6;
+        }
+        .container {
+            width: 210mm;
+            max-width: 100%;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: var(--container-bg);
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .chart-container {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        h1, .toggle-theme, #download-pdf {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        #category {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 20px;
+        }
+        .category-item {
+            background-color: var(--item-bg);
+            border-radius: 8px;
+            padding: 20px;
+            transition: transform 0.2s;
+        }
+        .category-item:hover {
+            transform: translateY(-5px);
+        }
+        .category-item h3 {
+            color: var(--header-color);
+            margin-top: 0;
+        }
+        .category-item p {
+            color: var(--text-color);
+            font-size: 14px;
+        }
+        img {
+            max-width: 300px;
+            margin: 20px auto;
+            display: block;
+        }
+        .toggle-theme {
+            cursor: pointer;
+            font-size: 16px;
+            color: var(--header-color);
+            font-weight: 500;
+        }
+    </style>
+</head>
+<body>
+    <div class="toggle-theme" onclick="toggleTheme()">Toggle Theme</div>
+    <div style="text-align: center; margin-bottom: 20px;">
+        <img src="https://d15mz6hmryxmzd.cloudfront.net/images/sil-newblack-logo.webp" alt="Company Logo">
+    </div>
+    <div class="container">
+        <h1>Result Report Analytics</h1>
+        <div class="chart-container">
+            <canvas id="myChart" width="400" height="400"></canvas>
+        </div>
+        <div id="category">
+            <!-- Categories will be populated by JavaScript -->
+        </div>
+    </div>
+    <button id="download-pdf">Download PDF</button>
+
+    <script>
+        const data = {
+            labels: ['Leadership Understanding', 'Strategic Orientation', 'Mentoring', 'Authenticity', 'Interpersonal Skills', 'Decisiveness', 'Teamwork', 'Time and Priority', 'Leadership/Personality', 'Result Orientation'],
+            datasets: [{
+                data: [10, 50, 10, 10, 10, 10, 10, 10, 10, 10],
+                backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0', '#9966FF', '#FF9F40', '#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0'],
+                borderWidth: 0,
+                radius: '90%',
+                spacing: 5
+            }]
+        };
+
+        const ctx = document.getElementById('myChart').getContext('2d');
+        const myChart = new Chart(ctx, {
+            type: 'pie',
+            data: data,
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: true,
+                        position: 'bottom',
+                        labels: {
+                            color: 'var(--text-color)',
+                            font: {
+                                size: 14
+                            }
+                        }
+                    },
+                    tooltip: {
+                        enabled: true,
+                        backgroundColor: 'rgba(0,0,0,0.8)'
+                    }
+                },
+                animation: {
+                    animateRotate: true,
+                    animateScale: true
+                }
+            }
+        });
+
+        const categoryContainer = document.getElementById('category');
+        const categories = {
+            'Leadership Understanding': 'Understanding the principles and practices of effective leadership.',
+            'Strategic Orientation': 'Ability to think and plan strategically for long-term success.',
+            'Mentoring': 'Guiding and supporting others in their development.',
+            'Authenticity': 'Being genuine, transparent, and true to oneself.',
+            'Interpersonal Skills': 'Communicating and building relationships effectively.',
+            'Decisiveness': 'Making effective decisions in difficult situations.',
+            'Teamwork': 'Collaborating effectively towards shared goals.',
+            'Time and Priority': 'Managing time and tasks to achieve goals.',
+            'Leadership/Personality': 'The blend of leadership traits and personal characteristics.',
+            'Result Orientation': 'Focusing on achieving measurable results.'
+        };
+        Object.keys(categories).forEach(category => {
+            const div = document.createElement('div');
+            div.classList.add('category-item');
+            div.innerHTML = `<h3>${category}</h3><p>${categories[category]}</p>`;
+            categoryContainer.appendChild(div);
+        });
+
+        document.getElementById('download-pdf').addEventListener('click', async function() {
+            const { PDFDocument } = PDFLib;
+            const canvas = await html2canvas(document.querySelector(".container"));
+            const imgData = canvas.toDataURL('image/png');
+            
+            const pdfDoc = await PDFDocument.create();
+            const page = pdfDoc.addPage([canvas.width, canvas.height]);
+            const jpgImage = await pdfDoc.embedPng(imgData);
+            
+            page.drawImage(jpgImage, {
+                x: 0,
+                y: 0,
+                width: page.getWidth(),
+                height: page.getHeight()
+            });
+
+            const pdfBytes = await pdfDoc.save();
+            const blob = new Blob([pdfBytes], { type: 'application/pdf' });
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = 'Report.pdf';
+            link.click();
+        });
+
+        function toggleTheme() {
+            document.body.classList.toggle('light-mode');
+        }
+    </script>
+</body>
+</html>
